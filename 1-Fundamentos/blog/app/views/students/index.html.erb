@@ -1,0 +1,35 @@
+<div class="container">
+    <h2 style="text-align:center;">Alunos</h2>
+    <hr>
+
+    <ul>
+    <% @students.each do |student| %>
+        <li>
+            <div>
+            <details>
+            <summary><%= student[:name]%></summary>
+            <p>Idade: <%= student[:age]%></p>
+            <p>Curso: <%= student[:course]%></p>
+            </details>
+            </div>
+        </li>
+        <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= student[:name]%>" aria-expanded="true" aria-controls="collapseOne">
+                ><%= student[:name]%>
+            </button>
+            </h2>
+            <div id="collapse<%= student[:name]%>" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <p>Idade: <%= student[:age]%></p>
+                <p>Curso: <%= student[:course]%></p>
+            </div>
+            </div>
+        </div>
+    <% end %>
+    </ul>
+
+    <a href="/home">Home</a>
+    <%= link_to "Home", home_path%>
+</div>
