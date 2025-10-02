@@ -12,9 +12,14 @@
 #   Product.create(name: "Produto #{i + 1}")
 # end
 
-require "faker"
-10.times do |i|
-  Product.create(
-    name: Faker::Commerce.product_name
-    )
-end
+# require "faker"
+# 10.times do |i|
+#   Product.create(
+#     name: Faker::Commerce.product_name
+#     )
+# end
+
+
+s1 = Student.create(name: "Rodrigo")
+
+t1 = Teacher.create(name: "Tiago")
