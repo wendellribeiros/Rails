@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   get "simple2", to: "simple#hello", defaults: {format: "json"}
   get "user/show/:id", to: "user#show", defaults: {format: "json"}
 
+  # Tasks
+
+  get "tasks", to: "tasks#index"
+  get "tasks/:id", to: "tasks#show"
 
 end
