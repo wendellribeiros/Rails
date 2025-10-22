@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   get "tasks", to: "tasks#index"
   get "tasks/:id", to: "tasks#show"
 
+  resources :posts do
+    member do 
+      get "comments", to: "post#comments"
+      post "create_comment", to: "posts#create_comment"
+    end
 end
