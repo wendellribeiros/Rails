@@ -28,11 +28,13 @@ class PostsController < ApplicationController
   end
 
   def comments
-    render json:{message:{"Listeagme de cometnários para o post #{params[:post_id]}"}}
+    render json:{message:"Listagem de comentários para o post #{params[:id]}"}
   end
 
   def create_comment
-    render json:{message:{"Craiando um novo comentário para o post #{params[:post_id]}"}}
+    render json:{message:"Criando um novo comentário para o post #{params[:id]}"}
   end
 end
+
+
 
