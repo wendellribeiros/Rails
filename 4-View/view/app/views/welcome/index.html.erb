@@ -11,9 +11,19 @@
     <ul>
         <% @produtos.each do |produto| %>
             <li>
-                <%= produto[:nome] %> - R$ <%= produto[:preco]%>
+                <%= produto["nome"] %> - R$ <%= produto["preco"]%>
             </li>
         <% end %>
+        <h3>Adicionar Novo Produto:</h3>
+        <%= form_tag({controller: "welcome", action: "adicionar_produto"}, method: "post") do %>
+        <label for="nome">Nome:</label>
+        <%= text_field_tag "nome", nil, required: true %>
+
+        <label for="preco">Preço:</label>
+        <%= number_field_tag "preco", nil, required: true%>
+
+        <%= submit_tag "Adicionar Produto"%>
+        <% end%>
     </ul>
 </body>
 </html>
