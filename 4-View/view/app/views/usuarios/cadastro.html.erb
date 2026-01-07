@@ -1,0 +1,15 @@
+<h1>Cadastro de Usuários</h1>
+<hr>
+
+<%= form_tag usuarios_confirmacao_path do %>
+    <label for="nome">Nome</label>
+    <%= text_field_tag "nome", nil, required: true %>
+
+    <label for="email">E-mail</label>
+    <%= email_field_tag "email", nil, required: true %>
+
+    <label for="senha">Senha</label>
+    <%= password_field_tag "senha", nil, required: true %>
+
+    <%= submit_tag "Enviar" %>
+<% end %>

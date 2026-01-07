@@ -11,7 +11,7 @@
     <ul>
         <% @produtos.each do |produto| %>
             <li>
-                <%= produto["nome"] %> - R$ <%= produto["preco"]%>
+                <%= produto["nome"] %> - <%= format_price(produto["preco"])%>
             </li>
         <% end %>
         <h3>Adicionar Novo Produto:</h3>
